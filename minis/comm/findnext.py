@@ -4,10 +4,13 @@ import sys
 import difflib
 import time
 import random
+import socket
 
 import pigpio
 
-name = "sqpa42"
+
+name = socket.gethostname()
+
 TR = 26
 baud = 9600
 bits = 8
