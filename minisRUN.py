@@ -12,19 +12,19 @@ import os, time
 
 #########
 
-import minis.am_fw.pps
-import minis.am_fw.motor
+import minis.auto.pps
+import minis.auto.motor
 
 try :
   while 1:	
-	x = minis.am_fw.pps.detect(18)
+	x = minis.auto.pps.detect(18)
 	if x == 0:
-		minis.am_fw.motor.InOut(24,23)
+		minis.auto.motor.InOut(24,23)
 	elif x == 1:	
-		minis.am_fw.motor.OutIn(24,23) 
+		minis.auto.motor.OutIn(24,23) 
 
 #except KeyboardInterrupt :
 #	minis.am_fw.motor.cleanup()
 
 finally :
-	minis.am_fw.motor.cleanup()
+	minis.auto.motor.cleanup()
