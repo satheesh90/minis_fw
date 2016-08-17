@@ -10,6 +10,7 @@ import pigpio
 
 
 name = socket.gethostname()
+cnt = len(name)
 
 TR = 26
 baud = 9600
@@ -20,7 +21,6 @@ pigpio.exceptions = False
 recv=0
 sentack=0
 
-#time.sleep(2)
 while 1:
         x=random.randint(1,4)
 	while x==1:
@@ -31,7 +31,7 @@ while 1:
                         pi.bb_serial_read_open(TR, baud, bits)
                         (count, data) = pi.bb_serial_read(TR)
                         time.sleep(0.1)
-                        if (count==6) and (data!=name) :
+                        if (count==cnt) and (data!=name) :
                                 neighbour = data
                                 recv = 1
                                 print "My neighbour is", neighbour
