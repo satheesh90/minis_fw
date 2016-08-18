@@ -6,7 +6,7 @@ import time
 import random
 import socket
 import threading
-from threading import Thread
+
 
 import pymongo
 client = pymongo.MongoClient('mongodb://129.217.193.182:38128/')
@@ -15,7 +15,7 @@ coll = db.neighbour
 
 import pigpio
 name = socket.gethostname()
-cnt = len(name)
+length = len(name)
 
 TR = 26
 RT = 19
@@ -23,14 +23,12 @@ baud = 9600
 bits = 8
 
 pigpio.exceptions = False
-#recv=0
-#sentack=0
-#recv1=0
-#sentack1=0
 
 def find_in():
    recv=0 
    sentack=0
+   cnt=0
+   Infind=0
    while 1:
         x=random.randint(1,2)
 	while x==1:
@@ -41,9 +39,9 @@ def find_in():
                         pi.bb_serial_read_open(TR, baud, bits)
                         (count, data) = pi.bb_serial_read(TR)
                         time.sleep(0.1)
-                        if (count==cnt) and (data!=name) :
+                        if (count==length) and (data!=name) :
                                 In = data
-                                print "My IN neighbour is",In
+                                print "My IN neighbour is", In
 				recv = 1
                                	pi.stop()
                                 break
@@ -55,10 +53,10 @@ def find_in():
                         break
 		else :
 			break
-
+	
 
 	while x==2:
-                if(sentack!="1"):
+                if(cnt <= 60):
                         pi=pigpio.pi()
                         pigpio.exceptions = False
                         pi.set_mode(TR, pigpio.OUTPUT)
@@ -69,15 +67,17 @@ def find_in():
                         pi.wave_delete(wid)
                         time.sleep(0.5)
                         pi.stop()
-                        break
+                        cnt = cnt+1
+			break
                 else:
   			break            
-
 	
 
 def find_out():
   recv1=0
-  sentack1=0	
+  sentack1=0
+  cnt1=0	
+  Outfind=0 
   while 1:
         x=random.randint(1,2)
         while x==1:
@@ -88,7 +88,7 @@ def find_out():
                         pi1.bb_serial_read_open(RT, baud, bits)
                         (count1, data1) = pi1.bb_serial_read(RT)
                         time.sleep(0.1)
-                        if (count1==cnt) and (data1!=name) :
+                        if (count1==length) and (data1!=name) :
                                 Out = data1
                                 print "My OUT neighbour is", Out
                                 recv1 = 1
@@ -104,7 +104,7 @@ def find_out():
                         break
 
         while x==2:
-                if(sentack1!="1"):
+                if(cnt1 <= 30):
                         pi1=pigpio.pi()
                         pigpio.exceptions = False
                         pi1.set_mode(RT, pigpio.OUTPUT)
@@ -114,17 +114,23 @@ def find_out():
                         pi1.wave_send_once(wid1)
                         pi1.wave_delete(wid1)
                         time.sleep(0.5)
-                        pi1.stop()
+                        cnt1 = cnt1+1
+			pi1.stop()
                         break
                 else:
                         break
+	
+		
 
-
-
-
+def main():
+	t1 = threading.Thread(target = find_in)
+	t1.start()
+	t2 = threading.Thread(target = find_out)
+	t2.start()
+	time.sleep(5)
+	t1.join()
+	t2.join()
+	
 if __name__ == '__main__':
-    Thread(target = find_in).start()
-    Thread(target = find_out).start()
-
-
+	main()		
 #db.neighbour.insert_one({"module":str(name), "In":str(In), "out":str(Out)})
