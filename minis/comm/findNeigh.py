@@ -21,7 +21,7 @@ def Neighbour(TR):
    Infind=0
    baud = 9600
    bits = 8
-   timeout = 15
+   timeout = 30
    while 1:
         x=random.randint(1,2)
 	while x==1:
