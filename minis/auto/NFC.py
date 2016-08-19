@@ -13,12 +13,12 @@ SCLK = 11
 nfc_r = nfc.PN532(cs=CS, sclk=SCLK, mosi=MOSI, miso=MISO)
 nfc_r.begin()
 
-def status():
-		
+def Status():
+			
                 ic, ver, rev, support = nfc_r.get_firmware_version()
 		print('Found PN532 with firmware version: {0}.{1}'.format(ver, rev))
 
-def read():
+def Read():
 
 		uid = nfc_r.read_passive_target()
                 

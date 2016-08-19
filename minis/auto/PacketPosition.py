@@ -5,9 +5,11 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
-def detect(pin):
-	GPIO.setup(pin, GPIO.IN)
+def Detect(pin):
+        GPIO.setup(pin, GPIO.IN)
         if(GPIO.input(pin) == GPIO.HIGH):
-		return 1
+                return 1
         else:
-		return 0
+                return 0
+
+

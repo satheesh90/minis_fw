@@ -29,12 +29,12 @@ def SortRight(ph, en):
         GPIO.output(en, False)
         GPIO.output(ph, True)
 
-def stop(ph, en):
+def Stop(ph, en):
 	GPIO.setup(ph, GPIO.OUT)
         GPIO.setup(en, GPIO.OUT)
         GPIO.output(en, False)
         
-def cleanup():
+def Cleanup():
 	GPIO.cleanup()
 	
 

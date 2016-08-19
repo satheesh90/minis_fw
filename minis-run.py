@@ -3,9 +3,9 @@
 import os
 import time
 import pymongo
-from minis.comm.findNeigh import Neighbour
+from minis.comm.FindNeighbour import Neighbour
 
-path = os.path.abspath("/home/pi/minis_fw/minis/config/mongoURI.txt")
+path = os.path.abspath("./minis/config/mongoURI.txt")
 uri = open(path,'r')
 
 mongouri = uri.readlines()
@@ -37,7 +37,6 @@ while (i<6) :
 		else:
 			chk = chk + name[i]
 		i = i +1
-print chk
 #########################################################################################
 
 if (chk != "SORT") :
