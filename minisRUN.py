@@ -26,13 +26,36 @@ while 1 :
 	else:
 		continue
 
-val1 = Neighbour(26)
-val2 = Neighbour(19)
-print "In Neighbour is", val1
-print "Out Neighbour is", val2
 
+#### Check whether it is a Sorter module - As it checks for 4 directional neighbours ###
+name = "ILSORT01"
+i=2
 
+while (i<6) :
+		if (i==2):
+			chk = name[i]
+		else:
+			chk = chk + name[i]
+		i = i +1
+print chk
+#########################################################################################
 
+if (chk != "SORT") :
+
+	val1 = Neighbour(26)
+	val2 = Neighbour(19)
+	print "In Neighbour is", val1
+	print "Out Neighbour is", val2
+
+else :
+	val1 = Neighbour(26)
+        val2 = Neighbour(19)
+        val3 = Neighbour(5)
+	val4 = Neighbour(6)
+	print "In Neighbour is", val1
+        print "Out Neighbour is", val2
+	print "Left Neighbour is", val3
+	print "Right Neighbour is", val4
 
 
 
