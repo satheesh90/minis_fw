@@ -21,6 +21,7 @@ def Neighbour(TR):
    Infind=0
    baud = 9600
    bits = 8
+   timeout = 6
    while 1:
         x=random.randint(1,2)
 	while x==1:
@@ -47,7 +48,7 @@ def Neighbour(TR):
 	
 
 	while x==2:
-                if(cnt <= 30):
+                if(cnt <= timeout):
                         pi=pigpio.pi()
                         pigpio.exceptions = False
                         pi.set_mode(TR, pigpio.OUTPUT)
@@ -63,11 +64,11 @@ def Neighbour(TR):
                 else:
   			break            
 	
-	if (recv == 1) and (cnt > 30):
+	if (recv == 1) and (cnt > timeout):
 		return find
 		break
                           
-        if (recv !=1) and (cnt > 30):
+        if (recv !=1) and (cnt > timeout):
 		return None
 		break
 
