@@ -141,14 +141,26 @@ else:
                 print "Enter 'y' or 'n'"
                 continue
 			
-print "nfc: ", nfc
-print "pps1:", pps1
-print "pps2:", pps2
-print "pps3:", pps3
-print "m1:", m1
-print "m2:", m2
-print "m3:", m3
 
+
+target = open('./minis/config/Config.txt','w')
+
+target.write(str(nfc))
+target.write("\n")
+target.write(str(pps1))
+target.write("\n")
+target.write(str(pps2))
+target.write("\n")
+target.write(str(pps3))
+target.write("\n")
+target.write(str(m1))
+target.write("\n")
+target.write(str(m2))
+target.write("\n")
+target.write(str(m3))
+target.write("\n")
+
+target.close()
 
 
 #if __name__ == "__main__":
