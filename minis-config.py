@@ -4,7 +4,8 @@ import time, sys
 
 name=socket.gethostname()
 
-from minis.auto.NFC import Status
+from minis.auto.NFCCheck import Status
+
 
 print "*****This program for is Testing the configuration of the MINIS module "+name+" *****"
 
