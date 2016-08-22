@@ -5,20 +5,20 @@ import socket
 
 def Check():
 
-	name = socket.gethostname()
-	i=2
-	while (i<6) :
-                if (i==2):
-                        chk = name[i]
-                else:
-                        chk = chk + name[i]
-                i=i+1
+	#name = socket.gethostname()
+	#i=2
+	#while (i<6) :
+        #        if (i==2):
+        #                chk = name[i]
+        #        else:
+        #                chk = chk + name[i]
+        #        i=i+1
 	#s = open('../config/Neighbours.txt','r')
 
 	#if chk == "SORT":
 	inhost = "ILCURV01"
 	outhost = "ILLONG01"
-	lefthost = "ILMANY01"
+	lefthost = "ILLONG01"
 	righthost = "ILDUMM03"
 	x=1
 	while 1:
