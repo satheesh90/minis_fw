@@ -1,0 +1,6 @@
+Wiringpi
+RPi.GPIO
+pigpio
+Adafruit_PN532
+pymongo
+
