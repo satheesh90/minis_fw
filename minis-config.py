@@ -124,6 +124,22 @@ if chk == "SORT" :
         else:
                 print "Enter 'y' or 'n'"
                 continue
+  target = open('./minis/config/Config.txt','w')
+  target.write(str(nfc))
+  target.write("\n")
+  target.write(str(pps1))
+  target.write("\n")
+  target.write(str(pps2))
+  target.write("\n")
+  target.write(str(pps3))
+  target.write("\n")
+  target.write(str(m1))
+  target.write("\n")
+  target.write(str(m2))
+  target.write("\n")
+  target.write(str(m3))
+  target.write("\n")
+  target.close()
 
 else:
   print "Since "+name+" is not a SORTER module, connect the conveyor driving motor at the position 'M1'."
@@ -141,28 +157,21 @@ else:
                 print "Enter 'y' or 'n'"
                 continue
 			
+  target = open('./minis/config/Config.txt','w')
+  target.write(str(nfc))
+  target.write("\n")
+  target.write(str(pps1))
+  target.write("\n")
+  target.write(str(pps2))
+  target.write("\n")
+  target.write(str(pps3))
+  target.write("\n")
+  target.write(str(m1))
+  target.write("\n")
+  target.close()
 
 
-target = open('./minis/config/Config.txt','w')
-
-target.write(str(nfc))
-target.write("\n")
-target.write(str(pps1))
-target.write("\n")
-target.write(str(pps2))
-target.write("\n")
-target.write(str(pps3))
-target.write("\n")
-target.write(str(m1))
-target.write("\n")
-target.write(str(m2))
-target.write("\n")
-target.write(str(m3))
-target.write("\n")
-
-target.close()
-
-
-#if __name__ == "__main__":
-#	main()
-
+stats = open('./minis/config/ModuleStatus.txt','w')
+stats.write("ready")
+stats.write("\n")
+stats.close
