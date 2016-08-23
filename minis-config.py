@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 import socket
 import time, sys
+from termcolor import colored
 
 name=socket.gethostname()
 
 from minis.auto.NFCCheck import Status
 
 
-print "*****This program for is Testing the configuration of the MINIS module "+name+" *****"
+print colored("*****This program for is Testing the configuration of the MINIS module "+name+" *****", 'green')
 
-print "(1) Checking for Adafruit PN532 NFC Reader....."
+print colored("(1) Checking for Adafruit PN532 NFC Reader.....", 'red')
 val = Status()
 if(val==1):
 	nfc=1
@@ -29,7 +30,7 @@ else :
 		print "Enter 'y' or 'n'"
 		continue
 
-print "(2) Checking for Paket Position Sensors..."
+print colored("(2) Checking for Paket Position Sensors...", 'red')
 while 1:
 	pps1_chk = raw_input("Is Packet Position Sensor at Position PPS1 of MINIS Board connected(y/n)? ")
 	if(pps1_chk == "y") or (pps1_chk == "Y"):
@@ -73,7 +74,7 @@ while 1:
 
 
 
-print "(3) Checking for Motors Connected to the module"
+print colored("(3) Checking for Motors Connected to the module", 'red')
 
 i=2
 while (i<6) :
@@ -176,3 +177,6 @@ stats = open('./minis/config/ModuleStatus.txt','w')
 stats.write("ready")
 stats.write("\n")
 stats.close
+
+
+print colored("Successfuly configured the module "+name+". Exiting the configuration .......",'blue')
