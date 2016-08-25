@@ -28,7 +28,7 @@ while 1 :
 
 
 #### Check whether it is a Sorter module - As it checks for 4 directional neighbours ###
-name = "ILSORT01"
+name = socket.gethostname()
 i=2
 
 while (i<6) :

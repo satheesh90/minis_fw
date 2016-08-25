@@ -123,7 +123,3 @@ This is an automatic e-mail to Alert the failure of one or more MINIS modules. A
 	smtpObj.sendmail(sender, receivers, message)           
 	print "Successfully sent email"
 	
-
-
-
-Check()
