@@ -32,7 +32,7 @@
 
 | Motors        | BCM GPIO(EN,PH)|Physical Pin(EN,PH)|
 |---------------|:--------------:|------------------:|
-|Conveyor Motor |     5, 6       |      29, 31       |
-|Sorter Motor1  |   23, 24       |      16, 18       |          
+|Conveyor Motor |     5, 6       |      16, 18       |
+|Sorter Motor1  |   23, 24       |      29, 31       |          
 |Sorter Motor2  |   12, 13       |      32, 33       |          
 
