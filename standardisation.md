@@ -14,8 +14,8 @@
 
 |Packet Position Sensors|  BCM GPIO  |  Physical Pin |
 |--------------|:----------:|--------------:|
-|     PPS1     |    17      |     11        |
-|     PPS2     |    18      |     12        |
+|     PPS1     |    18      |     12        |
+|     PPS2     |    17      |     11        |
 |     PPS3     |    27      |     13        |
 |     PPS4     |    22      |     15        |
 
