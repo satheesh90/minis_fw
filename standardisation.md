@@ -1,6 +1,6 @@
 #Standardisation of GPIOs of RPis
 
-### Connections of NFC Reader - Adafruit PN532 with RPi
+### Connections for NFC Reader - Adafruit PN532 with RPi
 
 | NFC Reader   |  BCM GPIO  |  Physical Pin |
 |--------------|:----------:|--------------:|
@@ -28,7 +28,7 @@
 |     LEFT     |    26      |    37         |
 |     RIGHT    |    21      |    40         |
 
-### Linear Converyor DC Motor Control GPIOs for Pololu DRV8838
+### DC Motor Control GPIOs for Pololu DRV8838
 
 | Motors        | BCM GPIO(EN,PH)|Physical Pin(EN,PH)|
 |---------------|:--------------:|------------------:|
