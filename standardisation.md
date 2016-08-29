@@ -34,5 +34,11 @@
 |---------------|:--------------:|------------------:|
 |Conveyor Motor |     5, 6       |      16, 18       |
 |Sorter Motor1  |   23, 24       |      29, 31       |          
-|Sorter Motor2  |   12, 13       |      32, 33       |          
+|Sorter Motor2  |   12, 13       |      32, 33       |    
+
+### Shutdown GPIO
+
+|  Shutdown  |  BCM GPIO  |  Physical Pin |
+|------------|:----------:|--------------:|
+|  Shutdown  |    16      |    36         |
 
