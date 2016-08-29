@@ -1,5 +1,6 @@
 #Standardisation of GPIOs of RPis
 
+### Connections of NFC Reader - Adafruit PN532 with RPi
 
 | NFC Reader   |  BCM GPIO  |  Physical Pin |
 |--------------|:----------:|--------------:|
@@ -9,6 +10,8 @@
 |     SCK      |     11     |       23      |
 
 
+### Packet Position Sensors - Digital Output connections to GPIOs 
+
 |Packet Position Sensors|  BCM GPIO  |  Physical Pin |
 |--------------|:----------:|--------------:|
 |     PPS1     |    17      |     11        |
@@ -16,6 +19,7 @@
 |     PPS3     |    27      |     13        |
 |     PPS4     |    22      |     15        |
 
+### Neighbourhood Dection Connections - RPi GPIOs
 
 |Neighbourhood |  BCM GPIO  |  Physical Pin |
 |--------------|:----------:|--------------:|
@@ -24,6 +28,7 @@
 |     LEFT     |    26      |    37         |
 |     RIGHT    |    21      |    40         |
 
+### Linear Converyor DC Motor Control GPIOs for Pololu DRV8838
 
 | Motors        | BCM GPIO(EN,PH)|Physical Pin(EN,PH)|
 |---------------|:--------------:|------------------:|
