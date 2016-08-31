@@ -54,7 +54,7 @@ def Neighbour(TR):
                         pigpio.exceptions = False
                         pi.set_mode(TR, pigpio.OUTPUT)
                         pi.wave_clear()
-                        pi.wave_add_serial(TR, baud,name, bits)
+                        pi.wave_add_serial(TR, baud,name, bb_bits=bits)
                         widright = pi.wave_create()
                         pi.wave_send_once(widright)
                         pi.wave_delete(widright)
