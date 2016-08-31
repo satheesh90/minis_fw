@@ -6,7 +6,8 @@ import time
 import random
 import socket
 import threading
-
+import os
+import pymongo
 
 import pigpio
 
@@ -75,7 +76,7 @@ def Neighbour(TR):
 
 if __name__ == "__main__":
 
-	path = os.path.abspath("./minis/config/mongoURI.txt")
+	path = os.path.abspath("../config/mongoURI.txt")
 	uri = open(path,'r')
 
 	mongouri = uri.readlines()
@@ -91,7 +92,7 @@ if __name__ == "__main__":
         	status = coll.find_one({"aspect":"status"})
         	value = status.get("value")
         	if value == "start":
-                	print "Starting..."
+#                	print "Starting..."
                 	break
         	else:
         	        continue
