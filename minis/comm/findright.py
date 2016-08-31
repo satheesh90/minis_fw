@@ -98,7 +98,7 @@ if __name__ == "__main__":
         	        continue
 
 
-	RIGHT = Neighbour(20)
+	RIGHT = Neighbour(21)
 	targetRIGHT = open('../config/RIGHT.txt','w')
 	targetRIGHT.write(str(RIGHT))
 	targetRIGHT.write("\n")
