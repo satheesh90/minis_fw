@@ -14,7 +14,7 @@ import pigpio
 pigpio.exceptions = False
 
 def Neighbour(TR):
-   name = socket.gethostname()
+   name = str(socket.gethostname())
    length = len(name)
    recv=0 
    sentack=0
@@ -55,9 +55,9 @@ def Neighbour(TR):
                         pi.set_mode(TR, pigpio.OUTPUT)
                         pi.wave_clear()
                         pi.wave_add_serial(TR, baud,name, bits)
-                        wid = pi.wave_create()
-                        pi.wave_send_once(wid)
-                        pi.wave_delete(wid)
+                        widleft = pi.wave_create()
+                        pi.wave_send_once(widleft)
+                        pi.wave_delete(widleft)
                         time.sleep(0.5)
                         pi.stop()
                         cnt = cnt+1
