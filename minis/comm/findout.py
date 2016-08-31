@@ -74,6 +74,28 @@ def Neighbour(TR):
 
 
 if __name__ == "__main__":
+	
+	path = os.path.abspath("./minis/config/mongoURI.txt")
+	uri = open(path,'r')
+
+	mongouri = uri.readlines()
+	host = mongouri[0]
+	port = int(mongouri[1])
+
+	client = pymongo.MongoClient(host,port)
+	db = client.minis       # Everything is dealt with a mongoDB named 'minis'
+	coll = db.config        # collection 'config' says when to start the configuration  
+
+	while 1 :
+
+        	status = coll.find_one({"aspect":"status"})
+        	value = status.get("value")
+        	if value == "start":
+#        	        print "Starting..."
+                	break
+        	else:
+                	continue
+
 	OUT = Neighbour(20)
 	targetOUT = open('../config/OUT.txt','w')
 	targetOUT.write(str(OUT))
