@@ -4,7 +4,7 @@ from minis.auto.NFCCheck import Status
 from minis.auto.NFC import Read
 
 import time
-uid_list = ['None']
+uid_list = [None]
 
 while 1:
        	uid = Read()

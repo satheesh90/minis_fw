@@ -40,10 +40,10 @@ while (i<6) :
 		i = i +1
 #########################################################################################
 
-if (chk != "SORT") :
+if (chk == "SORT") :
 
-	val1 = Neighbour(26)
-	val2 = Neighbour(19)
+	val1 = Neighbour(19)
+	val2 = Neighbour(26)
 	print "In Neighbour is", val1
 	print "Out Neighbour is", val2
 

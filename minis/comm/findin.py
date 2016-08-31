@@ -72,3 +72,10 @@ def Neighbour(TR):
 		return None
 		break
 
+
+if __name__ == "__main__":
+	IN = Neighbour(19)
+	targetIN = open('../config/IN.txt','w')
+	targetIN.write(str(IN))
+	targetIN.write("\n")
+	targetIN.close()
