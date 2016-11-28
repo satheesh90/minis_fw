@@ -19,7 +19,7 @@
 |     PPS3     |    27      |     13        |
 |     PPS4     |    22      |     15        |
 
-### Neighbourhood Dection Connections - RPi GPIOs
+### Neighbourhood Detection Connections - RPi GPIOs
 
 |Neighbourhood |  BCM GPIO  |  Physical Pin |
 |--------------|:----------:|--------------:|
